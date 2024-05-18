@@ -1,4 +1,4 @@
-import { Sidebar, TextInput } from "flowbite-react";
+import { Sidebar } from "flowbite-react";
 import type { FC } from "react";
 import { useEffect, useState } from "react";
 import {
@@ -11,6 +11,7 @@ import {
   HiSearch,
   HiShoppingBag,
   HiUsers,
+  HiLogout,
 } from "react-icons/hi";
 
 const ExampleSidebar: FC = function () {
@@ -26,15 +27,6 @@ const ExampleSidebar: FC = function () {
     <Sidebar aria-label="Sidebar with multi-level dropdown example">
       <div className="flex h-full flex-col justify-between py-2">
         <div>
-          <form className="pb-3 md:hidden">
-            <TextInput
-              icon={HiSearch}
-              type="search"
-              placeholder="Search"
-              required
-              size={32}
-            />
-          </form>
           <Sidebar.Items>
             <Sidebar.ItemGroup>
               <Sidebar.Item
@@ -46,53 +38,77 @@ const ExampleSidebar: FC = function () {
               >
                 Dashboard
               </Sidebar.Item>
-              <Sidebar.Item
-                href="/e-commerce/products"
-                icon={HiShoppingBag}
-                className={
-                  "/e-commerce/products" === currentPage
-                    ? "bg-gray-100 dark:bg-gray-700"
-                    : ""
-                }
+              <Sidebar.Collapse
+                label="Master Data"
+                icon={HiClipboard}
+                open={[
+                  "/master-data/pengguna",
+                  "/master-data/jurusan",
+                  "/master-data/guru",
+                  "/master-data/siswa",
+                ].includes(currentPage)}
               >
-                Products
-              </Sidebar.Item>
-              <Sidebar.Item
-                href="/users/list"
-                icon={HiUsers}
-                className={
-                  "/users/list" === currentPage
-                    ? "bg-gray-100 dark:bg-gray-700"
-                    : ""
-                }
-              >
-                Users list
-              </Sidebar.Item>
-              <Sidebar.Item href="/authentication/sign-in" icon={HiLogin}>
+                <Sidebar.Item
+                  href="/master-data/pengguna"
+                  icon={HiUsers}
+                  className={
+                    "/master-data/pengguna" === currentPage
+                      ? "bg-gray-100 dark:bg-gray-700"
+                      : ""
+                  }
+                >
+                  Pengguna
+                </Sidebar.Item>
+                <Sidebar.Item
+                  href="/master-data/jurusan"
+                  icon={HiCollection}
+                  className={
+                    "/master-data/jurusan" === currentPage
+                      ? "bg-gray-100 dark:bg-gray-700"
+                      : ""
+                  }
+                >
+                  Jurusan
+                </Sidebar.Item>
+                <Sidebar.Item
+                  href="/master-data/guru"
+                  icon={HiCollection}
+                  className={
+                    "/master-data/guru" === currentPage
+                      ? "bg-gray-100 dark:bg-gray-700"
+                      : ""
+                  }
+                >
+                  Guru
+                </Sidebar.Item>
+                <Sidebar.Item
+                  href="/master-data/siswa"
+                  icon={HiCollection}
+                  className={
+                    "/master-data/siswa" === currentPage
+                      ? "bg-gray-100 dark:bg-gray-700"
+                      : ""
+                  }
+                >
+                  Siswa
+                </Sidebar.Item>
+              </Sidebar.Collapse>
+              {/* <Sidebar.Item href="/authentication/sign-in" icon={HiLogin}>
                 Sign in
               </Sidebar.Item>
               <Sidebar.Item href="/authentication/sign-up" icon={HiPencil}>
                 Sign up
-              </Sidebar.Item>
+              </Sidebar.Item> */}
             </Sidebar.ItemGroup>
             <Sidebar.ItemGroup>
               <Sidebar.Item
-                href="https://github.com/themesberg/flowbite-react/"
-                icon={HiClipboard}
+                href="/logout"
+                className="bg-red-200 border-2 border-collapse shadow-lg border-red-600 dark:border-gray-700 dark:bg-gray-800 hover:bg-red-300 dark:hover:bg-red-400 text-black dark:text-white "
               >
-                Docs
-              </Sidebar.Item>
-              <Sidebar.Item
-                href="https://flowbite-react.com/"
-                icon={HiCollection}
-              >
-                Components
-              </Sidebar.Item>
-              <Sidebar.Item
-                href="https://github.com/themesberg/flowbite-react/issues"
-                icon={HiInformationCircle}
-              >
-                Help
+                <div className="flex justify-between items-center">
+                  Logout
+                  <HiLogout className="w-6 h-6" />
+                </div>
               </Sidebar.Item>
             </Sidebar.ItemGroup>
           </Sidebar.Items>

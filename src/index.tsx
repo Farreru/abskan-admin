@@ -11,6 +11,10 @@ import SignInPage from "./pages/authentication/sign-in";
 import SignUpPage from "./pages/authentication/sign-up";
 import EcommerceProductsPage from "./pages/e-commerce/products";
 import UserListPage from "./pages/users/list";
+import GuruPage from "./pages/master-data/guru";
+import JurusanPage from "./pages/master-data/jurusan";
+import PenggunaPage from "./pages/master-data/pengguna";
+import SiswaPage from "./pages/master-data/siswa";
 
 const container = document.getElementById("root");
 
@@ -33,6 +37,10 @@ root.render(
             element={<EcommerceProductsPage />}
           />
           <Route path="/users/list" element={<UserListPage />} />
+          <Route path="/master-data/guru" element={<GuruPage />} />
+          <Route path="/master-data/jurusan" element={<JurusanPage />} />
+          <Route path="/master-data/pengguna" element={<PenggunaPage />} />
+          <Route path="/master-data/siswa" element={<SiswaPage />} />
         </Routes>
       </BrowserRouter>
     </Flowbite>
