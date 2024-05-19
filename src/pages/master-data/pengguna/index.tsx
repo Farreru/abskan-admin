@@ -7,7 +7,7 @@ const PenggunaPage: FC = function () {
   return (
     <NavbarSidebarLayout>
       <div className="px-4 pt-4">
-        <div className="bg-white rounded border-2 border-gray-200">
+        <div className="bg-white rounded border-2 border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:text-white">
           <div className="flex justify-between items-center p-4">
             <h1 className="text-2xl font-bold">Pengguna</h1>
           </div>

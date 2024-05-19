@@ -24,9 +24,11 @@ if (!container) {
 
 const root = createRoot(container);
 
+const isDark = localStorage.getItem("theme") === "dark" ? true : false;
+
 root.render(
   <StrictMode>
-    <Flowbite theme={{ theme }}>
+    <Flowbite theme={{ theme, dark: isDark }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<DashboardPage />} index />
