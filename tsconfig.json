@@ -24,7 +24,8 @@
     "sourceMap": true,
     "strict": true,
     "target": "ESNext",
-    "types": ["vite/client"]
+    "types": ["vite/client"],
+    "module": "esnext" // or any of the other allowed values like 'es2020', 'es2022', 'system', 'node16', 'nodenext'
   },
   "exclude": ["node_modules"],
   "include": ["**/*.cjs", "**/*.mjs", "**/*.ts", "**/*.tsx"]
