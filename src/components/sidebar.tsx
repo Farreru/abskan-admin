@@ -25,7 +25,7 @@ const ExampleSidebar: FC = function () {
 
   return (
     <Sidebar aria-label="Sidebar with multi-level dropdown example">
-      <div className="flex h-full flex-col justify-between py-2">
+      <div className="flex h-full flex-col justify-between py-2 transition-all duration-500 ease-in-out">
         <div>
           <Sidebar.Items>
             <Sidebar.ItemGroup>

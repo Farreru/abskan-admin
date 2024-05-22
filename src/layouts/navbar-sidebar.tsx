@@ -4,6 +4,7 @@ import Navbar from "../components/navbar";
 import Sidebar from "../components/sidebar";
 import { MdFacebook } from "react-icons/md";
 import { FaDribbble, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
+import MobileSidebar from "../components/mobileSidebar";
 
 interface NavbarSidebarLayoutProps {
   isFooter?: boolean;
@@ -15,7 +16,12 @@ const NavbarSidebarLayout: FC<PropsWithChildren<NavbarSidebarLayoutProps>> =
       <>
         <Navbar />
         <div className="flex items-start pt-16">
-          <Sidebar />
+          <div className="hidden sm:hidden md:hidden lg:block">
+            <Sidebar />
+          </div>
+          <div className="sm:block md:block lg:hidden">
+            <MobileSidebar />
+          </div>
           <MainContent>{children}</MainContent>
         </div>
       </>
